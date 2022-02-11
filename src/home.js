@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import second from './images/bitmap.png';
-import first from './images/bitmap2.png';
+import second from './images/second.png';
+import first from './images/first.png';
 import logo from './images/img1.png';
 import letter from './images/img2.png';
 
@@ -18,7 +18,10 @@ export default function Home() {
           <h1>GUARANTEE</h1>
         </Routes>
       </Top>
-      <FirstMessage></FirstMessage>
+      <FirstMessage>
+        <h1>Measuring everything</h1>
+        <img src={first} alt='first' />
+      </FirstMessage>
       <SecondMessage></SecondMessage>
       <Bottom></Bottom>
     </Container>
@@ -78,6 +81,23 @@ const FirstMessage = styled.div`
   height: 1024px;
   width: 100%;
   background: #e9e9e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    width: 348px;
+    height: 192px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 82.2px;
+    font-weight: bold;
+    color: #716565;
+    line-height: 96px;
+  }
+
+  img {
+    height: 335px;
+  }
 `;
 
 const SecondMessage = styled.div`
