@@ -3,15 +3,16 @@ import second from './images/second.png';
 import first from './images/first.png';
 import logo from './images/img1.png';
 import letter from './images/img2.png';
-import { BsYoutube, BsTwitter } from 'react-icons/bs';
+import { BsYoutube, BsTwitter, BsThreeDotsVertical } from 'react-icons/bs';
 import { CgFacebook } from 'react-icons/cg';
 
 export default function Home() {
   return (
     <Container>
       <Top>
+        <BsThreeDotsVertical class='dots' size='40px' color='#e2e0b8' />
         <Logo>
-          <img src={logo} alt='logo' />
+          <img src={logo} alt='logo' className='logo' />
           <img src={letter} alt='letter' className='letter' />
         </Logo>
         <Routes>
@@ -60,8 +61,8 @@ export default function Home() {
 }
 
 const Container = styled.div`
-  height: 100vh; // alterar
-  width: 100vw; // alterar
+  height: 100%;
+  width: 100vw;
   background: pink;
 `;
 
@@ -71,6 +72,23 @@ const Top = styled.div`
   background: #fff;
   display: flex;
   justify-content: space-between;
+
+  .dots {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    justify-content: center;
+    .letter {
+      display: none;
+    }
+    .dots {
+      display: inherit;
+      position: fixed;
+      left: 10px;
+      top: 35px;
+    }
+  }
 `;
 
 const Logo = styled.div`
@@ -89,6 +107,13 @@ const Logo = styled.div`
     height: 70px;
     margin-left: 15px;
   }
+
+  @media (max-width: 900px) {
+    margin-left: 0px;
+    img {
+      height: 50px;
+    }
+  }
 `;
 
 const Routes = styled.div`
@@ -105,6 +130,10 @@ const Routes = styled.div`
 
   h1 {
     cursor: pointer;
+  }
+
+  @media (max-width: 900px) {
+    display: none;
   }
 `;
 
@@ -129,6 +158,27 @@ const FirstMessage = styled.div`
   img {
     height: 335px;
   }
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    height: auto;
+    padding: 60px 0px;
+
+    h1 {
+      font-size: 50px;
+      width: auto;
+      line-height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 25px;
+    }
+
+    img {
+      width: 90%;
+      height: auto;
+    }
+  }
 `;
 
 const SecondMessage = styled.div`
@@ -143,6 +193,14 @@ const SecondMessage = styled.div`
     position: absolute;
     right: 0;
     top: 130px;
+  }
+
+  @media (max-width: 1100px) {
+    height: 700px;
+    img {
+      height: 180px;
+      top: 380px;
+    }
   }
 `;
 
@@ -167,6 +225,27 @@ const Letters = styled.div`
     color: #fff;
     line-height: 56px;
   }
+
+  @media (max-width: 1100px) {
+    width: 90%;
+    height: auto;
+    bottom: 390px;
+    left: 0px;
+
+    h1 {
+      font-size: 40px;
+      margin-left: 20px;
+      margin-right: 20px;
+      line-height: 40px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+      line-height: 25px;
+    }
+  }
 `;
 
 const Bottom = styled.div`
@@ -175,6 +254,11 @@ const Bottom = styled.div`
   background: #e9e9e9;
   display: flex;
   align-items: center;
+
+  @media (max-width: 900px) {
+    height: auto;
+    flex-direction: column;
+  }
 `;
 
 const Follow = styled.div`
@@ -204,6 +288,15 @@ const Follow = styled.div`
     justify-content: center;
     margin-right: 20px;
   }
+
+  @media (max-width: 1100px) {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+  }
 `;
 
 const Contact = styled.div`
@@ -223,5 +316,14 @@ const Contact = styled.div`
     font-size: 16.2px;
     color: #716565;
     margin-bottom: 3px;
+  }
+
+  @media (max-width: 1100px) {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
   }
 `;
