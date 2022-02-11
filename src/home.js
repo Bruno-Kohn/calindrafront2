@@ -22,7 +22,15 @@ export default function Home() {
         <h1>Measuring everything</h1>
         <img src={first} alt='first' />
       </FirstMessage>
-      <SecondMessage></SecondMessage>
+      <SecondMessage>
+        <Letters>
+          <h1>We are Leader in Measure Tapes</h1>
+          <h2>
+            There are 5x the circumference of planet earth in metric tapes.
+          </h2>
+        </Letters>
+        <img src={second} alt='second' />
+      </SecondMessage>
       <Bottom></Bottom>
     </Container>
   );
@@ -102,8 +110,40 @@ const FirstMessage = styled.div`
 
 const SecondMessage = styled.div`
   height: 1024px;
-  width: 100%;
   background: #506fa9;
+  display: flex;
+  position: relative;
+
+  img {
+    opacity: 0.5;
+    height: 689px;
+    position: absolute;
+    right: 0;
+    top: 130px;
+  }
+`;
+
+const Letters = styled.div`
+  width: 600px;
+  position: absolute;
+  bottom: 200px;
+  left: 200px;
+
+  h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 69.2px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 81px;
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 48.2px;
+    color: #fff;
+    line-height: 56px;
+  }
 `;
 
 const Bottom = styled.div`
