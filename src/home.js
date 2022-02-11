@@ -3,6 +3,8 @@ import second from './images/second.png';
 import first from './images/first.png';
 import logo from './images/img1.png';
 import letter from './images/img2.png';
+import { BsYoutube, BsTwitter } from 'react-icons/bs';
+import { CgFacebook } from 'react-icons/cg';
 
 export default function Home() {
   return (
@@ -31,7 +33,28 @@ export default function Home() {
         </Letters>
         <img src={second} alt='second' />
       </SecondMessage>
-      <Bottom></Bottom>
+      <Bottom>
+        <Follow>
+          <h1>Follow Us</h1>
+          <div class='social'>
+            <span class='dot'>
+              <BsYoutube size='20px' color='#716565' />
+            </span>
+            <span class='dot'>
+              <CgFacebook size='20px' color='#716565' />
+            </span>
+            <span class='dot'>
+              <BsTwitter size='20px' color='#716565' />
+            </span>
+          </div>
+        </Follow>
+        <Contact>
+          <h1>Contact</h1>
+          <h2>2490 Leisure Lane</h2>
+          <h2>San Luis Obispo</h2>
+          <h2>California</h2>
+        </Contact>
+      </Bottom>
     </Container>
   );
 }
@@ -150,4 +173,55 @@ const Bottom = styled.div`
   height: 226px;
   width: 100%;
   background: #e9e9e9;
+  display: flex;
+  align-items: center;
+`;
+
+const Follow = styled.div`
+  height: 90px;
+  width: auto;
+  margin-left: 200px;
+
+  h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 27.2px;
+    color: #716565;
+    margin-bottom: 20px;
+  }
+
+  .social {
+    display: flex;
+  }
+
+  .dot {
+    height: 40px;
+    width: 40px;
+    border: 3px solid #716565;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+  }
+`;
+
+const Contact = styled.div`
+  width: auto;
+  margin-left: 400px;
+
+  h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 27.2px;
+    color: #716565;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16.2px;
+    color: #716565;
+    margin-bottom: 3px;
+  }
 `;
